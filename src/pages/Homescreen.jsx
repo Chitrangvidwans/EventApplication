@@ -12,7 +12,7 @@ const Homescreen = () => {
         <div>
             <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar> 
           <IconButton
             size="large"
             edge="start"
@@ -50,6 +50,12 @@ const Homescreen = () => {
           
       
         />
+        <DemoItem label="DateRangePicke" component="DateRangePicker">
+          <DateRangePicker defaultValue={[today, tomorrow]} minDate={tomorrow} />
+        </DemoItem>
+        <DemoItem label="DateTimeRangePicker" component="DateTimeRangePicker">
+          <DateTimeRangePicker defaultValue={[today, tomorrow]} minDate={tomorrow} />
+        </DemoItem>
       </DemoContainer>
     </LocalizationProvider>
     <Stack direction="row" spacing={2}>
