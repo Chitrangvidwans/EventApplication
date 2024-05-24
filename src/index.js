@@ -3,11 +3,22 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createClient } from '@supabase/supabase-js';
+import { SessionContextProvider } from '@supabase/auth-helpers-react';
+
+const supabase = createClient
+  ("https://tpprfuqhijkovkyufnoa.supabase.co"
+  ,
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRwcHJmdXFoaWprb3ZreXVmbm9hIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTY0NDcxMDcsImV4cCI6MjAzMjAyMzEwN30.TN41EmcecEJsYGmoBYFV8MnjR83g20zV3X5j0gFyC-A"
+  );
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <SessionContextProvider supabaseClient={supabase}>
+      <App />
+    </SessionContextProvider>
   </React.StrictMode>
 );
 

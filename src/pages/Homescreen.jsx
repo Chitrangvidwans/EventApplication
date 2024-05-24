@@ -2,11 +2,11 @@ import { AppBar, Box, Button, IconButton, Stack, TextField, Toolbar, Typography 
 import React from 'react';
 import "./form.css";
 import { DateTimePicker, LocalizationProvider } from '@mui/x-date-pickers';
-import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
+import {DemoContainer, DemoItem} from '@mui/x-date-pickers/internals/demo';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import dayjs from 'dayjs';
 
-// osjdjhgsodfhj
+
 
 const Homescreen = () => {
   const [value, setValue] = React.useState(dayjs('2022-04-17T15:30'));  
@@ -52,12 +52,7 @@ const Homescreen = () => {
           
       
         />
-        <DemoItem label="DateRangePicke" component="DateRangePicker">
-          <DateRangePicker defaultValue={[today, tomorrow]} minDate={tomorrow} />
-        </DemoItem>
-        <DemoItem label="DateTimeRangePicker" component="DateTimeRangePicker">
-          <DateTimeRangePicker defaultValue={[today, tomorrow]} minDate={tomorrow} />
-        </DemoItem>
+        
       </DemoContainer>
     </LocalizationProvider>
     <Stack direction="row" spacing={2}>
